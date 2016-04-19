@@ -9,9 +9,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by Lars on 19.04.2016.
- */
 @Component
 public class CategoryLoader implements ApplicationListener<ContextRefreshedEvent> {
     private CategoryRepository categoryRepository;

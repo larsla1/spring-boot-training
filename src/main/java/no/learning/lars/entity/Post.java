@@ -1,14 +1,13 @@
 package no.learning.lars.entity;
 
+import no.learning.lars.constraints.PostConstraintValidator;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
-/**
- * Post represents a Post object
- */
-
 @Entity
+@PostConstraintValidator(message = "The validation of the person object failed")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +24,6 @@ public class Post {
 
     @Size(min = 10, max = 255)
     private String description;
-    // Lag om til enum
     private String category; // TODO: Change this to an Category object
     private String imgUrl;
 

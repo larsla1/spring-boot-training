@@ -2,9 +2,6 @@ package no.learning.lars.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by Lars on 19.04.2016.
- */
 @Entity
 public class Category {
     @Id

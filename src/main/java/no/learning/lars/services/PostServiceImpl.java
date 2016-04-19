@@ -7,9 +7,6 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.executable.ValidateOnExecution;
 
-/**
- * Created by Lars on 17.04.2016.
- */
 @Service
 public class PostServiceImpl implements PostService {
     private PostRepository postRepository;

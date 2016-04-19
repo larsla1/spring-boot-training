@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableAutoConfiguration //Tells Spring Boot to  automatically create Spring Beans with defaults values for testing purposes.
-@EntityScan(basePackages = {"no.learning.lars.entity"}) //Tells Hibernate where to look for JPA entities
+@EntityScan(basePackages = {"no.learning.lars.*"}) //Tells Hibernate where to look for JPA entities
 @EnableJpaRepositories(basePackages = {"no.learning.lars.repositories"}) //Enable auto config of Spring Data JPA
 @EnableTransactionManagement //Enable annotation driven transaction management.
 public class RepositoryConfig {

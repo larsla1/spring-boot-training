@@ -27,6 +27,7 @@
                 <label>Description:</label>
                 <div>
                     <input type="text" th:field="*{description}"/>
+                    <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</td>
                 </div>
             </div>
             <div>
@@ -43,6 +44,7 @@
             </div>
             <div>
                 <button type="submit">Submit</button>
+                <p th:if="${#fields.hasErrors('${post}')}" th:errors="${post}"></p>
             </div>
         </form>
     </div>

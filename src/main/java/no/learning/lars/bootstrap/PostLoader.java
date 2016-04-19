@@ -10,10 +10,6 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Lars on 17.04.2016.
- */
-
-/**
  * This class implements the ApplicationListener interface.
  * The class is called when the ContextRefresedEvent occurs during startup
  * And loads predefined object into the database.

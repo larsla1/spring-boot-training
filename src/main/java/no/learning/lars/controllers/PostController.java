@@ -2,27 +2,25 @@ package no.learning.lars.controllers;
 
 import no.learning.lars.entity.Post;
 import no.learning.lars.services.PostService;
-import no.learning.lars.validator.PostValidator;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by Lars on 17.04.2016.
- */
+import javax.validation.Valid;
 
 @Controller
 public class PostController {
 
     private PostService postService;
-    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(PostController.class);
+    private static final Logger logger = LoggerFactory.getLogger(PostController.class);
 
-    @Autowired
+    @Autowired // denne kan slettes og settes direkte på private variabelen
     public void setPostService(PostService postService) {
         this.postService = postService;
     }
@@ -56,7 +54,10 @@ public class PostController {
     }
 
     @RequestMapping(value = "post", method = RequestMethod.POST)
-    public String savePost(Post post) {
+    public String savePost(@Valid Post post, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "postform";
+        }
         postService.savePost(post);
         logger.debug("Saved posts with id: " + post.getId() + " to DB");
         return "redirect:/post/" + post.getId();
