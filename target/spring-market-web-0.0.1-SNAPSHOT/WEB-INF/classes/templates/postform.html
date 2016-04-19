@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Market</title>
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <h2>New Post</h2>
+    <div>
+        <form th:object="${post}" th:action="@{/post}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <input type="hidden" th:field="*{version}"/>
+            <div>
+                <label>Topic:</label>
+                <div>
+                    <input type="text" th:field="*{topic}"/>
+                </div>
+            </div>
+            <div>
+                <label>Price:</label>
+                <div>
+                    <input type="text" th:field="*{price}"/>
+                </div>
+            </div>
+            <div>
+                <label>Description:</label>
+                <div>
+                    <input type="text" th:field="*{description}"/>
+                </div>
+            </div>
+            <div>
+                <label>Category:</label>
+                <div>
+                    <input type="text" th:field="*{category}"/>
+                </div>
+            </div>
+            <div>
+                <label>Image Url:</label>
+                <div>
+                    <input type="text" th:field="*{imgUrl}"/>
+                </div>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Market</title>
+</head>
+<body>
+<h1>Spring Marketplace Index</h1>
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div>
+                <div>
+                    <a href="#" th:href="@{/}">Home</a>
+                    <ul>
+                        <li><a href="#" th:href="@{/posts}">Posts</a></li>
+                        <li><a href="#" th:href="@{/post/new}">Create Post</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+</body>
+</html>

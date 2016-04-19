@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Market</title>
+</head>
+<body>
+<h1>Spring Marketplace Index</h1>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h2>Post Details</h2>
+    <div>
+        <form>
+            <div>
+                <label>Post Id:</label>
+                <div>
+                    <p th:text="${post.id}">Post Id</p>
+                </div>
+            </div>
+            <div>
+                <label>Topic:</label>
+                <div>
+                    <p th:text="${post.topic}">description</p>
+                </div>
+            </div>
+            <div>
+                <label>Price:</label>
+                <div>
+                    <p th:text="${post.price}">price</p>
+                </div>
+            </div>
+            <div>
+                <label>Description:</label>
+                <div>
+                    <p th:text="${post.description}">description</p>
+                </div>
+            </div>
+            <div>
+                <label>Category:</label>
+                <div>
+                    <p th:text="${post.category}">category</p>
+                </div>
+            </div>
+            <div>
+                <label>Image Url:</label>
+                <div>
+                    <p th:text="${post.imgUrl}">url</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

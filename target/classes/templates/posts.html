@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Market</title>
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(posts)}">
+        <h2>Post List</h2>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Topic</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>View</th>
+                <th>Edit</th>
+            </tr>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.id}"><a href="/post/${post.id}">Id</a></td>
+                <td th:text="${post.topic}">topic</td>
+                <td th:text="${post.price}">price</td>
+                <td th:text="${post.description}">descirption</td>
+                <td th:text="${post.category}">category</td>
+                <td><a th:href="${ '/post/' + post.id}">View</a></td>
+                <td><a th:href="${'/post/edit/' + post.id}">Edit</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
